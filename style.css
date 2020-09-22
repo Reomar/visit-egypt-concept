@@ -1,0 +1,441 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+/* ScrollBar */
+::-webkit-scrollbar {
+    display: none;
+}
+/* ::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+} */
+
+/* GLOBAL STYLES */
+*{
+    margin: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: #676767;
+    background-color: #f8f8ff;
+    scroll-behavior: smooth;
+}
+
+    /* Flex styles */
+.flex-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto 0 auto;
+}
+
+.flex-Lcontainer{
+    width: fit-content;
+    margin-right: 3rem;
+}
+
+.flex-Rcontainer{
+    width: fit-content;
+}
+
+.tittle{
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: black;
+}
+
+.illustration{
+    width: 100%;
+    min-width: 300px;
+}
+
+
+.titile-margin-fix{
+    margin: auto 5% auto 0;
+}
+
+
+    @media screen and (max-width: 900px){
+
+        /* flex style for smaller screen */
+        .flex-container{
+            flex-direction: column;
+        }
+
+        .flex-Lcontainer{
+            margin-right: 0;
+        }
+
+        .s-screen-order{
+            order: 2;
+        }
+
+
+        /* Fix margin in flight-book-section and destenations-section */
+        .titile-margin-fix{
+            margin: auto;
+            text-align: center;
+        }
+
+
+        /* Illustration for small screen */
+        .illustration{
+            min-width: 70%;
+            max-width: 320px;
+        }
+
+        .info-illustration{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+    }
+
+
+/* ------------------------------- */
+/* Inro Section */
+#intro{
+    height: 100vh;
+    color: #ffffff;
+    background: url(./imgs/bg_large.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+    /* change BG img to fit small screens */
+    @media screen and (max-width: 1000px){
+        #intro{
+            background: url(./imgs/bg_small.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    }
+
+    @media screen and (max-width: 450px){
+        #intro{
+            background: url(./imgs/bg_ulra_small.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        #front-pyramid{
+            display: none;
+        }
+    }
+
+#front-pyramid{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    object-fit: cover;
+    scroll-behavior: smooth;
+}
+
+#logo{
+    position: relative;
+    left: 10%;
+    width: 7rem;
+    margin-top: 1rem;
+    filter: brightness(100);
+}
+
+
+#intro-arrow{
+    position: absolute;
+    width: 80px;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0px 13px 24px  rgba(0,0,0,1));
+
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+}
+
+/* ------------------------------- */
+/*  EGYPT INFO SECTION */
+
+.info-section{
+    margin-top: 8rem;
+}
+
+.info-text{
+    text-align: justify;
+    font-size: small;
+}
+
+.info-text span{
+    color:black;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.scroll-imgs{
+    overflow: auto;
+    white-space: nowrap;
+    margin-top: 3rem;
+    will-change: scroll-position;
+}
+
+.img-container{
+    width: 330px;
+    height: 400px;
+    display: inline-block;
+    margin-right: 1rem;
+    border-radius: 10px;
+    background-color: #B87333;
+    overflow: hidden;
+
+}
+
+.img-container img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.img-container img:hover{
+    transform: scale(1.1);
+
+}
+
+.img-container:nth-child(1){
+    margin-left: 10%;
+}
+
+    /* Fix for small screens */
+    @media screen and (max-width: 900px){
+
+        #ancient-L{
+            margin: 0;
+        }
+    }
+
+
+/* ------------------------------- */
+/* FLIGHT BOOKING SECTION */
+
+.flight-book-section{
+    width: 100%;
+    height: max-content;
+    background-color: #FDF4EA;
+    margin-top: 7rem;
+    padding: 32px 0 32px 0;
+}
+
+.flight-book-section .tittle{
+    color: #676767;
+}
+
+.button{
+    background-color: #B87333;
+    border: none;
+    width: 80%;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 300ms ease;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover {
+    box-shadow: 0 0 0 0, 0 0 0 0;
+}
+
+/* ------------------------------- */
+/* Destinations SECTION */
+
+.destination-section{
+    width: 100%;
+    margin-top: 8rem;
+}
+
+.xl-illustration-fix{
+    max-width: 500px;
+}
+
+.grid-container {
+    display: grid;
+    width: 80%;
+    margin: 1rem auto 0 auto;
+    grid-template-columns: 30% 30%;
+    grid-template-rows: 150px 150px;
+    grid-auto-rows: minmax(150px, 150px);
+    gap: 1rem;
+    justify-content: center;
+}
+
+.grid-item{
+    position: relative;
+    background-color: #B87333;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.grid-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    filter: saturate(50%) brightness(70%);
+    transition: all .5s ease;
+}
+
+.grid-item:hover img{
+    transform: scale(1.1);
+    filter: saturate(100%) brightness(90%);
+
+}
+
+
+@media screen and (max-width: 900px){
+    .grid-container{
+        width: 100%;
+        grid-template-columns: 80%;
+    }
+
+    .grid-item img{
+        filter: saturate(100%) brightness(70%);
+    }
+}
+
+.grid-item h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f8f8ff;
+    font-size: 5rem;
+}
+
+
+
+/* ------------------------------- */
+/* carousel-slider SCETION */
+
+.carousel-section{
+    margin-top: 10rem;
+}
+
+.carousel-container{
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-slider{
+    width: 100%;
+    height: 600px;
+    width: 100%;
+    background-color: #B87333;
+    margin: 0;
+}
+
+.slide{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    margin: 0;
+}
+
+.carousel-img{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+}
+
+#prev-btn{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    left: 0;
+    z-index: 10;
+}
+
+#prev-arrow{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    z-index: 11;
+    width: 50%;
+    transform: rotate(90deg) translateX(-50%);
+}
+
+#next-btn{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    right: 0;
+    z-index: 10;
+}
+
+#next-arrow{
+    position: absolute;
+    top: 50%;
+    right: 4%;
+    z-index: 11;
+    width: 50%;
+    transform: rotate(-90deg) translateX(50%);
+}
+
+#egypt-logo{
+    position: absolute;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    filter: brightness(100);
+}
+
+
+/* ANIMATIONS */
+@keyframes floating {
+    0% {transform: translate(-50%,0px); }
+    50% { transform: translate(-50%,-10px); }
+    100% {transform: translate(-50%,0px); }
+}
+
