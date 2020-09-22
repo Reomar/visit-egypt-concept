@@ -118,7 +118,7 @@ body{
 #intro{
     height: 100vh;
     color: #ffffff;
-    background: url(./imgs/bg_large.png);
+    background: url(./imgs/bg_large.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -127,7 +127,7 @@ body{
     /* change BG img to fit small screens */
     @media screen and (max-width: 1000px){
         #intro{
-            background: url(./imgs/bg_small.png);
+            background: url(./imgs/bg_small.webp);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -137,7 +137,7 @@ body{
 
     @media screen and (max-width: 450px){
         #intro{
-            background: url(./imgs/bg_ulra_small.png);
+            background: url(./imgs/bg_ulra_small.webp);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
